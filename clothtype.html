@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var x= window.location.href;
+        x=x.split("?");
+        console.log(x[1]);
+
+    </script>
+    <style>
+        body{
+            background:#9b5bd5;
+            display: block;
+            margin:0;
+            padding:80px;
+        }
+    .container
+        {
+            width: 100%;
+            height: 100%;  
+            color: blueviolet;
+            visibility: visible;
+
+        }
+        img{
+            display: inline-flex;
+            flex-wrap: wrap;
+            flex-flow: column;
+            background-size: contain;
+            object-fit: center;
+            height: 400px;
+            width: 400px;
+            padding: 20px;
+            border:2px solid #17b9d9;
+            background-color: rgb(138, 131, 228);
+            border-radius: 3px;
+
+        }
+        #something{
+            text-decoration: darkblue;
+            font-family: cursive;
+            margin-left:16cm;
+            padding:5px;
+            display:inline-block;
+            border-radius: 14px; 
+            margin-bottom:1cm;
+            color: rgb(17,14,190);
+            border:2px solid rgb(55, 55, 185);
+            background:rgb(102, 102, 240);
+        }
+    </style>
+</head>
+<body>
+    <h1 id="something">
+ </h1>
+ 
+ 
+ <div id="container">
+
+    <script>
+       document.getElementById("something").innerText=x[1];
+      
+       if (localStorage.getItem('quiz') == null) {
+                document.getElementById('m1').style.display = "block";
+                setTimeout(function () {
+                    window.location.href = "quiz.html";
+                }, 5000);
+
+        }
+        else
+        {
+        let rec = localStorage.getItem('quiz');
+            rec = JSON.parse(rec);
+            let bmi = parseFloat(rec["bmi"]);
+            let gen = rec["q3"];
+            gen = gen.toUpperCase(gen);
+            //document.write("hello world");
+           
+            //LESS THAN 18.5 BMI FOR MALE BEGINS HERE 
+            if (bmi < 19 && gen == "MALE" && x[1]=="wedwear") {
+                let im = document.getElementById('container');
+                for (let i = 1; i < 12; i++) {
+                    let i1 = document.createElement("img");
+                    i1.src = `./Image/bmi less then 18.5/bmi less then 18.5/MALE/All wedding wear/wm${i}.jpg`;
+                    im.appendChild(i1);
+                }
+            }
+            if (bmi < 19 && gen == "MALE" && x[1]=="casual" ) {
+                let im = document.getElementById('container');
+                for (let i = 1; i < 13; i++) {
+                    let i1 = document.createElement("img");
+                    i1.src = `./Image/bmi less then 18.5/bmi less then 18.5/MALE/casual wear/cm${i}.jpg`;
+                    im.appendChild(i1);
+                }
+            }
+            if (bmi < 19 && gen == "MALE" && x[1]=="formal" ) {
+                let im = document.getElementById('container');
+                for (let i = 1; i < 9; i++) {
+                    let i1 = document.createElement("img");
+                    i1.src = `./Image/bmi less then 18.5/bmi less then 18.5/MALE/party formal/pfm${i}.jpg`;
+                    im.appendChild(i1);
+                }
+            }
+            if (bmi < 19 && gen == "MALE" && x[1]=="gymwear") { 
+                let im = document.getElementById('container');
+                for (let i = 1; i < 10; i++) {
+                    let i1 = document.createElement("img");
+                    i1.src = `./Image/bmi less then 18.5/bmi less then 18.5/MALE/gym wear/gm${i}.jpg`;
+                    im.appendChild(i1);
+                    
+                }
+            }
+
+          //LESS THAN 18.5 FOR FEMALE BEGINS 
+            if (bmi < 19 && gen == "FEMALE" && x[1]=="wedwear") {
+                    let im = document.getElementById('container');
+                    for (let i = 1; i < 11; i++) {
+                        let i1 = document.createElement("img");
+                        i1.src = `./Image/bmi less then 18.5/bmi less then 18.5/FEMALE/wedding dress/wf${i}.jpg`;
+                        im.appendChild(i1);
+                    }
+            }
+
+            if (bmi < 19 && gen == "FEMALE" && x[1]=="casual") {
+                    let im = document.getElementById('container');
+                    for (let i = 1; i < 19; i++) {
+                        let i1 = document.createElement("img");
+                        i1.src = `./Image/bmi less then 18.5/bmi less then 18.5/FEMALE/casual/cf${i}.jpg`;
+                        im.appendChild(i1);
+                    }
+            }
+            if (bmi < 19 && gen == "FEMALE" && x[1]=="formal") {
+                    let im = document.getElementById('container');
+                    for (let i = 1; i < 10; i++) {
+                        let i1 = document.createElement("img");
+                        i1.src = `./Image/bmi less then 18.5/bmi less then 18.5/FEMALE/formal/ff${i}.jpg`;
+                        im.appendChild(i1);
+                    }
+            }
+            if (bmi < 19 && gen == "FEMALE" && x[1]=="gymwear") {
+                    let im = document.getElementById('container');
+                    for (let i = 1; i < 7; i++) {
+                        let i1 = document.createElement("img");
+                        i1.src = `./Image/bmi less then 18.5/bmi less then 18.5/FEMALE/gym wear/gf${i}.jpg`;
+                        im.appendChild(i1);
+                    }
+            }
+            
+            //AVERAGE BMI FOR MALE BEGINS HERE
+            if (bmi >= 19 && bmi <= 25 && gen == "MALE" && x[1]=="casual") {
+                let im = document.getElementById('container');
+                for (let i = 1; i < 14; i++) {
+                    let i1 = document.createElement("img");
+                    i1.src = `./Image/bmi 18.5-24.9 average/MALE/casual/cm${i}.jpg`;
+                    im.appendChild(i1);
+                }
+            }
+            if (bmi >= 19 && bmi <= 25 && gen == "MALE"&& x[1]=="formal") {
+                let im = document.getElementById('container');
+                for (let i = 1; i < 10; i++) {
+                    let i1 = document.createElement("img");
+                    i1.src = `./Image/bmi 18.5-24.9 average/MALE/Formal/fm${i}.jpg`;
+                    im.appendChild(i1);
+                }
+            }
+            if (bmi >= 19 && bmi <= 25 && gen == "MALE"&& x[1]=="gymwear") {
+                let im = document.getElementById('container');
+                for (let i = 1; i < 10; i++) {
+                    let i1 = document.createElement("img");
+                    i1.src = `./Image/bmi 18.5-24.9 average/MALE/gym wear/gm${i}.jpg`;
+                    im.appendChild(i1);
+                }
+            }
+            if (bmi >= 19 && bmi <= 25 && gen == "MALE" && x[1]=="wedwear") {
+                let im = document.getElementById('container');
+                for (let i = 1; i < 12; i++) {
+                    let i1 = document.createElement("img");
+                    i1.src = `./Image/bmi 18.5-24.9 average/MALE/wedding/wm${i}.jpg`;
+                    im.appendChild(i1);
+                }
+            }
+            //AVERAGE WOMAN BEGINS HERE
+            if (bmi >= 19 && bmi <= 25 && gen == "FEMALE"&& x[1]=="casual") {
+                    let im = document.getElementById('container');
+                    for (let i = 1; i < 12; i++) {
+                        let i1 = document.createElement("img");
+                        i1.src = `./Image/bmi 18.5-24.9 average/FEMALE/casual/cf${i}.jpg`;
+                        im.appendChild(i1);
+                    }
+            }
+            if (bmi >= 19 && bmi <=25 && gen == "FEMALE" && x[1]=="formal") {
+                    let im = document.getElementById('container');
+                    for (let i = 1; i < 10; i++) {
+                        let i1 = document.createElement("img");
+                        i1.src = `./Image/bmi 18.5-24.9 average/FEMALE/formal/ff${i}.jpg`;
+                        im.appendChild(i1);
+                    }
+            }
+            if (bmi >= 19 && bmi <=25 && gen == "FEMALE" && x[1]=="gymwear") {
+                    let im = document.getElementById('container');
+                    for (let i = 1; i < 10; i++) {
+                        let i1 = document.createElement("img");
+                        i1.src = `./Image/bmi 18.5-24.9 average/FEMALE/gym wear/gf${i}.jpg`;
+                        im.appendChild(i1);
+                    }
+            }
+            if (bmi >= 19 && bmi <=25 && gen == "FEMALE" && x[1]=="wedwear") {
+                    let im = document.getElementById('container');
+                    for (let i = 1; i < 8; i++) {
+                        let i1 = document.createElement("img");
+                        i1.src = `./Image/bmi 18.5-24.9 average/FEMALE/wedding/wf${i}.jpg`;
+                        im.appendChild(i1);
+                    }
+            }
+            //FAT MALES FOLDER 
+            if (bmi > 25 && bmi <= 30 && gen == "MALE" && x[1]=="casual") {
+                let im = document.getElementById('container');
+                for (let i = 1; i < 13; i++) {
+                    let i1 = document.createElement("img");
+                    i1.src = `./Image/bmi 25.0- 29.9 fat/MALE/casual/cf${i}.jpg`;
+                    im.appendChild(i1);
+                }
+            }
+            if (bmi > 25 && bmi <= 30 && gen == "MALE" && x[1]=="formal") {
+                let im = document.getElementById('container');
+                for (let i = 1; i < 12; i++) {
+                    let i1 = document.createElement("img");
+                    i1.src = `./Image/bmi 25.0- 29.9 fat/MALE/Formal/fm${i}.jpg`;
+                    im.appendChild(i1);
+                }
+            }
+            if (bmi > 25 && bmi <= 30 && gen == "MALE" && x[1]=="gymwear") {
+                let im = document.getElementById('container');
+                for (let i = 1; i < 8; i++) {
+                    let i1 = document.createElement("img");
+                    i1.src = `./Image/bmi 25.0- 29.9 fat/MALE/gym wear/gm${i}.jpg`;
+                    im.appendChild(i1);
+                }
+            }
+            if (bmi > 25 && bmi <= 30 && gen == "MALE" && x[1]=="wedwear") {
+                let im = document.getElementById('container');
+                for (let i = 1; i < 12; i++) {
+                    let i1 = document.createElement("img");
+                    i1.src = `./Image/bmi 25.0- 29.9 fat/MALE/wedding/wm${i}.jpg`;
+                    im.appendChild(i1);
+                }
+            }
+            //FAT FEMALES BLOW
+            if (bmi > 25 && bmi <= 30 && gen == "FEMALE" && x[1]=="wedwear") {
+                let im = document.getElementById('container');
+                for (let i = 1; i < 13; i++) {
+                    let i1 = document.createElement("img");
+                    let i2 = document.createElement("textarea");
+                    i2.innerHTML
+                    i1.src = `./Image/bmi 25.0- 29.9 fat/FEMALE/wedding/wf${i}.jpg`;
+                    im.appendChild(i1);
+                }
+            }
+            if (bmi > 25 && bmi <= 30 && gen == "FEMALE" && x[1]=="casual") {
+                let im = document.getElementById('container');
+                for (let i = 1; i < 13; i++) {
+                    let i1 = document.createElement("img");
+                    i1.src = `./Image/bmi 25.0- 29.9 fat/FEMALE/casual/cf${i}.jpg`;
+                    im.appendChild(i1);
+                }
+            }
+            if (bmi > 25 && bmi <= 30 && gen == "FEMALE" && x[1]=="gymwear") {
+                let im = document.getElementById('container');
+                for (let i = 1; i < 15; i++) {
+                    let i1 = document.createElement("img");
+                    i1.src = `./Image/bmi 25.0- 29.9 fat/FEMALE/gym wear/gf${i}.jpg`;
+                    im.appendChild(i1);
+                }
+            }
+            if (bmi > 25 && bmi <= 30 && gen == "FEMALE" && x[1]=="formal") {
+                let im = document.getElementById('container');
+                for (let i = 1; i < 12; i++) {
+                    let i1 = document.createElement("img");
+                    i1.src = `./Image/bmi 25.0- 29.9 fat/FEMALE/formal/ff${i}.jpg`;
+                    im.appendChild(i1);
+                }
+            }
+            //OBESE MALES
+
+            if (bmi > 30 && gen == "MALE" && x[1]=="formal") {
+                let im = document.getElementById('container');
+                for (let i = 1; i < 10 ;i++) {
+                    let i1 = document.createElement("img");
+                    i1.src = `./Image/bmi greatre then 30 (obese)/MALE/Formal/fm${i}.jpg`;
+                    im.appendChild(i1);
+                }
+            }
+            if (bmi > 30 && gen == "MALE" && x[1]=="wedwear") {
+                let im = document.getElementById('container');
+                for (let i = 1; i < 11 ;i++) {
+                    let i1 = document.createElement("img");
+                    i1.src = `./Image/bmi greatre then 30 (obese)/MALE/wedding/wm${i}.jpg`;
+                    im.appendChild(i1);
+                }
+            }
+            
+            if (bmi > 30 && gen == "MALE" && x[1]=="casual") {
+                let im = document.getElementById('container');
+                for (let i = 1; i < 12; i++) {
+                    let i1 = document.createElement("img");
+                    i1.src = `./Image/bmi greatre then 30 (obese)/MALE/casual/cm${i}.jpg`;
+                    im.appendChild(i1);
+                }
+            }
+            
+            if (bmi > 30 && gen == "MALE" && x[1]=="gymwear") {
+                let im = document.getElementById('container');
+                for (let i = 1; i < 6; i++) {
+                    let i1 = document.createElement("img");
+                    i1.src = `./Image/bmi greatre then 30 (obese)/MALE/gym wear/gm${i}.jpg`;
+                    im.appendChild(i1);
+                }
+            }
+            //obese females 
+            if (bmi > 30 && gen == "FEMALE" && x[1]=="wedwear") {
+                let im = document.getElementById('container');
+                for (let i = 1; i < 13; i++) {
+                    let i1 = document.createElement("img");
+                    i1.src = `./Image/bmi greatre then 30 (obese)/FEMALE/wedding/wf${i}.jpg`;
+                    im.appendChild(i1);
+                }
+            }
+            if (bmi > 30 && gen == "FEMALE" && x[1]=="formal") {
+                let im = document.getElementById('container');
+                for (let i = 1; i < 8; i++) {
+                    let i1 = document.createElement("img");
+                    i1.src = `./Image/bmi greatre then 30 (obese)/FEMALE/formal/ff${i}.jpg`;
+                    im.appendChild(i1);
+                }
+            }
+            if (bmi > 30 && gen == "FEMALE" && x[1]=="casual") {
+                let im = document.getElementById('container');
+                for (let i = 1; i < 15; i++) {
+                    let i1 = document.createElement("img");
+                    i1.src = `./Image/bmi greatre then 30 (obese)/FEMALE/casual/cf${i}.jpg`;
+                    im.appendChild(i1);
+                }
+            } 
+            if (bmi > 30 && gen == "FEMALE" && x[1]=="gymwear") {
+                let im = document.getElementById('container');
+                for (let i = 1; i < 12; i++) {
+                    let i1 = document.createElement("img");
+                    i1.src = `./Image/bmi greatre then 30 (obese)/FEMALE/gym wear/gf${i}.jpg`;
+                    im.appendChild(i1);
+                }
+            }
+      
+
+        }
+    </script>
+    </div>
+</body>
+</html>

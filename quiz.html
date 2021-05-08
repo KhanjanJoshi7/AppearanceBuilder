@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-type" content="text/html">
+    <title>Quiz</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 20px;
+        }
+        h2{
+            font-size: 40px;
+        }
+        body,html{
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            
+        }
+        .bdy{
+            background: #ca90ff;
+            width: 100%;
+            height: 100vh;
+            filter: blur(10px);
+            -webkit-filter: blur(10px);
+            position: relative;
+        }
+        .quiz {
+            position: absolute;
+            top: 20%;
+            left: 10%;
+            border: 1px solid black;
+            padding: 30px;
+            border-radius: 10px;
+            width: 80%;
+            background:rgba(68, 120, 145, 0.4);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .anim
+        {
+            animation: anim 0.1s linear 1;
+        }
+        input::-webkit-inner-spin-button
+        {
+            display: none;
+        }
+        input[type="number"]
+        {
+            /* width: 100%;
+            font-size: 20px;
+            color: white;
+            margin: 5px 0;
+            padding: 5px 10px;
+            outline: none;
+            background-color: black;
+            border-radius: 10px; */
+            transition: 2s;
+            margin-bottom: 10px;
+        }
+        input[type="submit"]{
+            padding: 10px;
+            border-radius: 10px;
+            background-color: aqua;
+            outline: none;
+            z-index: 2;
+            transition: 1s;
+        }
+        button{
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            font-weight: bolder;
+            border-radius: 100px;
+            font-size: 25px;
+            outline: none;
+            background: transparent;
+        }
+        input[type="number"]:hover,input[type="number"]:focus
+        {
+            width: 100%;
+            font-size: 20px;
+            color: white;
+            margin: 5px 0;
+            padding: 5px 10px;
+            outline: none;
+            background-color: black;
+            border-radius: 10px;
+        }
+        input[type="submit"]:hover,input[type="submit"]:focus
+        {
+            width: 15%;
+            height: 60px;
+            font-size: 20px;
+            color: white;
+            margin: 5px 0;
+            padding: 5px 10px;
+            outline: none;
+            background-color: black;
+            border-radius: 10px;
+        }
+        button:hover,button:active{
+            transition: 2s;
+            background: black;
+            color: white;
+        }
+        .q1,.q2,.q3,.q4,.q5
+        {
+            display: none;
+        }
+        @keyframes anim{
+            0%{
+                opacity: 0;
+                transform:translate(-80%,-80%);
+            }
+            80%{
+                opacity: 0.3;
+                transform:translate(-20%,-20%);
+
+            }
+            100%
+            {
+                opacity: 1;
+                transform:translate(0,0);
+            }
+        }
+        .msg
+        {
+            display: none;
+            position: absolute;
+            top: 0px;
+            text-align: left;
+            justify-content: center;
+            padding:5px 40px;
+        }
+        .msg img{
+            max-height: 400px;
+            max-width: 500px;
+            margin:0 20%;   
+        }
+        .msg h2
+        {
+            font-size: 30px;
+        }
+    </style>
+    <script src="./quiz.js" defer></script>
+
+</head>
+
+<body>
+    <div class="bdy">
+    
+    </div>
+    <div class="msg" id="msg">
+        <h1 style="font-size: 40px;">Please Enable cookies From Your browser</h1>
+        <h2>Step 1: Go to borwser's Setting</h2>
+        <h2>Step 2: GO to privacy and Security</h2>
+        <img src="./images/cookie1.JPG" alt="Cookies">
+        <h2>Step 3: GO to Cookies and other site data</h2>
+        <h2>Step 4:Click on Allow all cookies and refresh the page</h2>
+        <img src="./images/cookie2.JPG" alt="Cookies">
+
+    </div>
+    <noscript>
+    <h1 style="position: absolute;top: 0;margin:20px;text-align: center;font-size: 50px;">Enable Javascript From Your browser</h1>
+        
+    </noscript>
+    
+
+    <div class="back" id="b1">
+        <div class="quiz">
+            <h1>
+                <center>Quiz</center>
+            </h1><br><br>
+            <div class="start" id="start">
+                <h1>Please give us some information so that we can understand you better</h1>
+                <button id="sq">Start Quiz</button>
+            </div>
+            <div class="q1" id="q1">
+                <h2>Q1 . What is your height? (in cm)</h2>
+                <input type="number" id="height" required>
+                <br>
+                <input type="submit" id="n1" value="Next">
+            </div>
+            <div class="q2" id="q2">
+                <h2>Q2 . What is your Weight? (in kg)</h2>
+                <input type="number" id="weight" data-type="number" pattern="1-200" required>
+                <br>
+                <input type="submit" id="n2" value="Next" />
+                <input type="submit" id="p2" value="Previous" />
+
+            </div>
+            <div class="q3" id="q3">
+                <h2>Q3 . What is your Gender?</h2>
+                <button value="Male" class="gen">Male</button><br>
+                <button value="Female" class="gen">Female</button><br><br>
+                <input type="submit" id="n3" value="Next" />
+                <input type="submit" id="p3" value="Previous" />
+
+            </div>
+            <div class="q4" id="q4">
+                <h2>Q4 . What are your you currently pursuing?</h2>
+                <button value="Student" class="pursue">Student</button><br>
+                <button value="Field working job" class="pursue">Field working job</button><br>
+                <button value="Working in an office" class="pursue">Working in an office</button><br>
+                <button value="I don't do anything" class="pursue">I don't do anything</button><br>
+
+                <br><br>
+                <input type="submit" id="n4" value="Next"/>
+                <input type="submit" id="p4" value="Previous"/>
+            </div>
+            <div class="q5" id="q5">
+                <h2>Q5 . At any event you are supposed to attend, you prefer?</h2>
+                <button value="Shirts and pants,formal always" class="prefer">Shirts and pants,formal always</button><br>
+                <button value="casual and comfortable" class="prefer">casual and comfortable</button><br>
+                <button value="What i find i wear it" class="prefer">What i find i wear it</button><br>
+                <br><br>
+                <input type="submit" id="f1" value="Finish" />
+                <input type="submit" id="p5" value="Previous" />
+
+            </div>
+
+        </div>
+    </div>
+    <script>
+        if (navigator.cookieEnabled == false) {
+                document.getElementById("b1").style.display = "none";
+
+                document.getElementById("msg").style.display = "block";
+            }
+    </script>
+
+</body>
+
+</html>

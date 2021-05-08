@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-type" content="text/html">
+    <title>Login</title>
+    <style>
+        h1{
+            font: oblique;
+            font-family: fantasy;
+            color:rgb(93, 168, 230);
+            display: block;
+            background-color: darkorange;
+        }
+        .container
+        {
+            background-color: rgb(57, 119, 86);
+        }
+        .locks
+        {
+            background-image: url("./images/back1.jpg");
+        }
+        button
+        {
+            font-size: 20px;
+            font-weight: bolder;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            padding: 5px;
+            background: transparent;
+            cursor: pointer;
+            border-radius: 100px;
+
+        }
+        img{
+              display: inline-flex;
+            flex-wrap: wrap;
+            flex-flow: column;
+            background-size: contain;
+            object-fit: center;
+            height: 400px;
+            width: 400px;
+            padding: 20px;
+            border: 1px solid black;
+        }
+        .main
+        {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <h1>
+        <center>Accessories For You</center>
+    </h1>
+    
+    <div class="container" id="container">
+        <div class="main" id="m1">
+            <h1>
+                <center>Please Give us some information for better Recommendations</center>
+            </h1>
+        </div>
+    </div>
+    <script>
+        if (localStorage.getItem('quiz') == null) {
+            document.getElementById('m1').style.display = "block";
+            setTimeout(function () {
+                window.location.href = "quiz.html";
+            }, 5000);
+
+        }
+        else {
+            let rec = localStorage.getItem('quiz');
+            rec = JSON.parse(rec);
+            let gen = rec["q3"];
+            gen = gen.toUpperCase(gen);
+            if (gen == "MALE") {
+                let im = document.getElementById('container');
+                for (let i = 1; i < 31; i++) {
+                    let i1 = document.createElement("img");
+                    i1.src = `./Image/Goggles for male/Goggles for male/g${i}.jpg`;
+                    im.appendChild(i1);
+                }
+            }
+            if (gen == "FEMALE") {
+                let im = document.getElementById('container');
+                for (let i = 1; i < 31; i++) {
+                    let i1 = document.createElement("img");
+                    i1.src = `./Image/Goggles for female/Goggles for female/fg${i}.jpg`;
+                    im.appendChild(i1);
+                }
+            }
+        }
+        </script>
+</body>
+
+</html>

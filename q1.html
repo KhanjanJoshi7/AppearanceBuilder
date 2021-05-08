@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, max-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-type" content="text/html">
+    <link rel="stylesheet" href="login.css">
+    <title>Login</title>
+    <style>
+        .locks {
+            background-image: url("./images/back1.jpg");
+        }
+        a{
+            display: inline-block;
+        }
+        button {
+            font-size: 20px;
+            font-weight: bolder;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            padding: 5px;
+            background: transparent;
+            cursor: pointer;
+            border-radius: 100px;
+        }
+        h1
+        {
+            border: 2px solid green;
+            background: yellowgreen;
+            height: 50px;
+            margin: 50px;
+            width: 260px;
+            border-radius: 100px;
+            padding: 10px;
+        }
+
+        .upload {
+            position: relative;
+        }
+
+        .upload input[type="file"] {
+            position: absolute;
+            display: block;
+        }
+        
+            h3{
+            display:inline-block;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            margin:auto;
+            display: inline-block;
+            white-space:normal;
+            padding:4px;
+            padding-top: 5px;
+            margin-left: 80px;
+            margin-right:90px;
+            align-self: auto;;
+            border: 10px solid rgb(60, 94, 245);
+            border-radius: 8px;;
+            border-width: 4px;
+            background-color: rgb(84, 146, 226);
+        }
+        h3:hover{
+            display:inline-block;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            margin:auto;
+            display: inline-block;
+            white-space:normal;
+            padding:4px;
+            padding-top: 5px;
+            margin-left: 80px;
+            margin-right:90px;
+            align-self: auto;;
+            border: 10px solid rgb(48, 73, 184);
+            border-radius: 8px;;
+            border-width: 4px;
+            background-color: rgb(69, 127, 202);
+
+        }
+        h2{
+            margin-left: 12cm;
+            font-family:Arial, Helvetica, sans-serif;
+            text-align: justify;
+            color:rgb(228, 20, 148)
+        }
+        .typo{
+            background:black;
+            border:3px solid grey;
+        }
+        .link{
+           
+            border:3px solid burlywood !important;  
+            padding:80px !important;
+            margin:20cm;   
+        }
+        .link:hover{
+            cursor:pointer;
+        }
+       
+    </style>
+</head>
+
+<body>
+    <div class="hamburger" id="bur" onclick="fun()">
+        <div class="burger">
+            <hr>
+            <hr>
+            <hr>
+       
+        </div>
+    
+</div>
+    <div class="container" id="cont">
+        <div class="logo">
+            <div class="anchor">
+                <nav>
+                    <ul>
+                        <li>
+                        <li ><a href="home.html">SGP</a></li>
+
+                        </li>
+                        <li><a href="home.html">Home</a></li>
+                        <hr>
+                        <li><a href="about.html">About Me</a></li>
+                        <hr>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+   
+        <div class="typo">
+            <a id="oval" href="face.html?oval" ><h3>Oval</h3> </a>
+            <a id="round" href="face.html?round" ><h3>Round</h3> </a>
+            <a id="square" href="face.html?square" ><h3>Square</h3></a>
+            <a id="diamond" href="face.html?diamond"><h3>Diamond</h3></a>
+            <a id="heart" href="face.html?heart"><h3>Heart</h3></a>
+            <a id="oblong" href="face.html?oblong"><h3>Oblong</h3></a>
+        </div>
+        <br><br><br>
+        <h2>
+            Just one more Step and you are good to go!!<br>
+            if you know your face shape: go select it! <br>
+            but if you dont then click below<br>
+            <a href="https://www.birchbox.com/guide/article/how-to-determine-face-shape-men"  ><h3 id="link"><center>Check your Face-shape</center></h3></a>
+        </h2>
+
+       
+    <!-- <div class="content">
+        <div class="locks">
+            <form action="1.py" method="post">
+                <label class="upload">
+                    <h1>Image Upload</h1>
+                    <input type="file" style="visibility: hidden;" id="i1" required role="img" accept=".jpg">
+                </label>
+
+                <input type="submit" value="Submit" style="padding: 10px;margin-left: 50px;font-size: 20px; background: url('images/');border-radius: 100px;">
+            </form>
+        </div> 
+
+    </div>-->
+
+</body>
+
+</html>
